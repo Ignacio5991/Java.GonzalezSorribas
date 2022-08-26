@@ -1,7 +1,8 @@
 //escoba de 15//
-for (let c = 1; c <= 15; c++) {
-    if (c === 15) {
+for (let carta = 1; carta < 15; carta++) {
+    if (carta === 15) {
         break
     };
-    alert (`El valor de C es $(c)`)
+    console.log(`El valor de carta es $(15)`)
 }
+   
