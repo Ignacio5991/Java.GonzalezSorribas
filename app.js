@@ -37,7 +37,7 @@ let ingreseclavedevalidacion;
 let carrito=0;
 let valorcarrito=0;
 let cantidaddecomponentescomprados="";
-let numerorandom=Math.round(Math.random()=10000000);
+let numerorandom=Math.round(Math.random()*1000000);
 let letrarandom=Math.random().toString(24).replace(/[^a-z]+/g,"");
 let idaleatorio=(letrarandom.toUpperCase())+numerorandom;
 function atenderalcomprador(){
@@ -53,10 +53,16 @@ function atenderalcomprador(){
                 }
             }
             else{
-            alert("Datos incorrector");
+            alert("Datos incorrectos");
             atenderalcomprador();
             }
         }
+function iniciarsesion(){
+    let identifiquese = prompt("Ingrese nombre de usuario");
+    let ingreseclavedevalidacion = prompt("Ingrese contraseña");
+    if (identifiquese == "" && ingreseclavedevalidacion == "")
+    alert ("Ingreso con exito");
+}
 alert("Bienvenido!!!");
 atenderalcomprador();
 
