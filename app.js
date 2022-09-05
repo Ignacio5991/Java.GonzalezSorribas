@@ -37,7 +37,7 @@ let ingreseclavedevalidacion;
 let carrito=0;
 let valorcarrito=0;
 let cantidaddecomponentescomprados="";
-let numerorandom=Math.round(Math.random()*1000000);
+let numerorandom=Math.round(Math.random()*2000000);
 let letrarandom=Math.random().toString(24).replace(/[^a-z]+/g,"");
 let idaleatorio=(letrarandom.toUpperCase())+numerorandom;
 function atenderalcomprador(){
@@ -89,19 +89,20 @@ function menu(){
                 sumaralcarro();
                 break;
                 case "2": 
-                        productos="Mother Gigabyte B550M Aorus Pro AX AM,";
-                        precioProducto=preciomother;
+                        producto="Mother Gigabyte B550M Aorus Pro AX AM,";
+                        precioperiferico=preciomother;
                         sumaralcarro();
                         break;
                 case "3": 
-                        productos="Gabinete Corsair iCUE 5000T RGB Black";
-                        precioProducto=preciogabinete;
+                        producto="Gabinete Corsair iCUE 5000T RGB Black";
+                        precioperiferico=preciogabinete;
                         sumaralcarro();
                         break;
                 case "4": 
                         mostrarMenu();
                         break;
 }}
+menu();
 alert("Bienvenido!!!");
 atenderalcomprador();
-menu();
+
