@@ -63,6 +63,9 @@ function iniciarsesion(){
     if (identifiquese == "" && ingreseclavedevalidacion == "")
     alert ("Ingreso con exito");
 }
+function menu(){
+    
+}
 alert("Bienvenido!!!");
 atenderalcomprador();
-
+menu();
