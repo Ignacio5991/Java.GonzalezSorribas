@@ -64,8 +64,44 @@ function iniciarsesion(){
     alert ("Ingreso con exito");
 }
 function menu(){
-    
-}
+    let producto=prompt("Seleccione los perifericos para armar su transformer \n 1-Placa de Video rtx 3090 \n 2-Mother Gigabyte B550M Aorus Pro AX AM4 \n 3-Gabinete Corsair iCUE 5000T RGB Black \n 4-.Volver")
+        let precioperiferico=0;
+        const preciortx=999999;
+        const preciomother=38851;
+        const preciogabinete=85100;
+            switch(producto){
+                case"1":
+                function sumaralcarro(){
+                    if(carrito >=3){
+                    alert("carro lleno")
+                    menu()
+                }else{
+                 carrito++
+                valorcarrito+precioperiferico;
+                cantidaddecomponentescomprados=cantidaddecomponentescomprados+producto
+                alert(`Se añadio al carrito ${producto} ${precioperiferico}`)
+                return menu()
+               }
+            }
+
+                producto="Placa de Video rtx 3090,";
+                precioperiferico=preciortx;
+                sumaralcarro();
+                break;
+                case "2": 
+                        productos="Mother Gigabyte B550M Aorus Pro AX AM,";
+                        precioProducto=preciomother;
+                        sumaralcarro();
+                        break;
+                case "3": 
+                        productos="Gabinete Corsair iCUE 5000T RGB Black";
+                        precioProducto=preciogabinete;
+                        sumaralcarro();
+                        break;
+                case "4": 
+                        mostrarMenu();
+                        break;
+}}
 alert("Bienvenido!!!");
 atenderalcomprador();
 menu();
