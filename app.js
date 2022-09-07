@@ -105,10 +105,7 @@
                          mostrarMenu();
                          break;
  }}
- menu();
- alert("Bienvenido!!!");
- atenderalcomprador();
- totalgastado();
+ 
  function totalgastado(ars){
     suma=0;
     for (let i = 0; i<ars.length; i ++){
@@ -118,4 +115,8 @@
     suma = suma + changuito [a];
 }
     return suma;
- 
+    
+    menu();
+    alert("Bienvenido!!!");
+    atenderalcomprador();
+    totalgastado();
