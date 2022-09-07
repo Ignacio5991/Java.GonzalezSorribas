@@ -39,7 +39,7 @@
  let identifiquese;
  let ingreseclavedevalidacion;
  let carrito=0;
- let valorcarrito=0;
+ let valorcarrito=[0];
  let cantidaddecomponentescomprados="";
  let numerorandom=Math.round(Math.random()*2000000);
  let letrarandom=Math.random().toString(24).replace(/[^a-z]+/g,"");
@@ -108,14 +108,14 @@
  
  function totalgastado(ars){
     suma=0;
-    for (let i = 0; i<ars.length; i ++){
-        changuito.push(ars[i])
+    for (let carrito = 0; carrito<ars.length; carrito ++){
+        carrito.push(ars[i])
     }
-    for (let a = 0; a < changuito.length; a ++)
-    suma = suma + changuito [a];
+    for (let valorcarrito = 0; a < valorcarrito.length; valorcarrito ++)
+    suma = suma + carrito [valorcarrito];
 }
     return suma;
-    
+
     menu();
     alert("Bienvenido!!!");
     atenderalcomprador();
