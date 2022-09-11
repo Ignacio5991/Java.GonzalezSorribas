@@ -3,8 +3,8 @@ alert ("Bienvenido");
 function iniciosesion(){
     let  usuario = prompt  ("Ingrese su nombre de usuario");
     let  contraseña = prompt  ("Ingrese su clave alfanumerica de 6 caracteres");
-    if (usuario == "" && contraseña ==""){    
-    } else { usuario != "" && contraseña !=""
+    if (usuario == "" && contraseña =="pcg456"){    
+    } else { usuario != "" && contraseña !="pcg456"
         alert("Los datos ingresados son incorrectos")
     }
 alert ("Inicio de sesion con exito");
@@ -35,24 +35,34 @@ const producto4= new producto("Gabinete Corsair RGB","$50.000")
 const producto5= new producto("Mother Gigabyte B550M","$38.000")
 let perifericos =[]
 function compras(){
-    let changuito = prompt ("Seleccione sus productos \n 1-Tarjeta Grafica RTX 3080 \n 2-Tarjeta Grafica AMD Readon 580 \n 3-Memoria Corsair 2x8g \n 4-Gabinete Corsair \n 5-Placa Madre Gigabye ")
+    let changuito = Number(prompt ("Seleccione sus productos \n 1-Tarjeta Grafica RTX 3080 \n 2-Tarjeta Grafica AMD Readon 580 \n 3-Memoria Corsair 2x8g \n 4-Gabinete Corsair \n 5-Placa Madre Gigabye  \n 6- Finalizar Compra"))
     switch(changuito){
         case 1:
             perifericos.push(producto1)
+            compras()
         break;
         case 2:
             perifericos.push(producto2)
+            compras()
         break;
         case 3:
             perifericos.push(producto3)
+            compras()
         break;
         case 4:
             perifericos.push(producto4)
+            compras()
         break;
         case 5:
             perifericos.push(producto5)
+            compras()
         break;
+        case 6:
+            break;
     }   
+    let factura = ""
+    perifericos.forEach( producto => factura +=`Tu producto es ${producto.nombre} y el precio es ${producto.precio}\n`)
+    alert(factura)
 }
 compras();
 
