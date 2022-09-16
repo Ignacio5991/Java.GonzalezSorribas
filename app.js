@@ -65,4 +65,22 @@ function compras(){
     alert(factura)
 }
 compras();
-
+alert("Gracias por su compra")
+//DOM
+const aliados = document.querySelector("h3").textContent= "Confian en Nosotros";
+console.log(aliados);
+let teclado = [];
+teclado.push(new producto("Apex 100",4500,"Teclado mecanico"))
+teclado.push(new producto("Apex 750",7800,))
+teclado.push(new producto("Corsair 68",15000,"El mejor compañero del gaming"))
+teclado.push(new producto("Red Dragon Kumara",10000,"Nunca te abandona"))
+let teclados = document.getElementById("seccionteclados")
+let temp = document.querySelector("template")
+let card = temp.content.querySelector("div")
+teclado.forEach((producto)=>{
+    let cardCopiada = card.cloneNode(true)
+    teclados.appendChild(cardCopiada)
+    cardCopiada.children[0].innerText = producto.nombre
+    cardCopiada.children[1].innerText = producto.precio
+    cardCopiada.children[2].innerText = producto.detalle
+})
