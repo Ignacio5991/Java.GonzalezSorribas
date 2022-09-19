@@ -1,15 +1,5 @@
 alert ("Bienvenido");
 //Funcion de iniscio de sesion del usuario antes de comenzar a navegar.
-function iniciosesion(){
-    let  usuario = prompt  ("Ingrese su nombre de usuario");
-    let  contraseña = prompt  ("Ingrese su clave alfanumerica de 6 caracteres");
-    if (usuario == "" && contraseña =="pcg456"){    
-    } else { usuario != "" && contraseña !="pcg456"
-        alert("Los datos ingresados son incorrectos")
-    }
-alert ("Inicio de sesion con exito");
- }
-iniciosesion();
 //Aqui esta la funcion de interaccion del usuario para navegar o buscar.
 function navegacion(){
     let interaccion = prompt ("Desea ver el catalogo? o ya sabe lo que busca?")
@@ -85,35 +75,9 @@ teclado.forEach((producto)=>{
     cardCopiada.children[2].innerText = producto.detalle
 })
 //Aplicando eventos 
-class mouse{
-    constructor(id,nombre,precio,img){
-        this.id=id;
-        this.nombre=nombre;
-        this.precio=precio;
-        this.img=img;
-    }
+let ingreso = document.getElementById("contact-form");
+ingreso.addEventListener("submit",validarIngreso);
+function validarIngreso(e){
+    e.preventdefault();
+    console.log("ingreso con exito");
 }
-const chanGuito=[];
-const mouse1 = new mouse ("1", "Asus Rog Gladius", 7500, "src/img/asus-rog-gladius.jpg")
-const mouse2 = new mouse ("2","Cougar Surpasion", 6000, "src/img/cougar-surpasion.jpg")
-chanGuito.push(mouse1,mouse2);
-const catalogomouse = (mouse) =>{
-    const contenedormouse = getElementById("contenedor-mouse");
-    mouse.forEach(raton=>{
-        const card = document.createElement("card");
-        card.innerHTML+=`<div class="card" style="width:18rem;">
-                        <img src="${raton.img}" class="card-img-top" alt="...">
-                        <div class="card-body"><h5 class="card-title">${raton.name}</h5>
-                        <p class="card-text">Price:$ ${raton.price}</p>
-                        <button class="btn btn-primary" id="button${raton.id}">Add to Cart</button>
-                        </div>`
-        contenedormouse.appendChild(card);
-        const button = document.getElementById(`button${mouse.id}`);
-        button.addEventListener(`click`,()=>{
-            changuitomouse(`${mouse.id}`);
-            alert(`Agregaste ${raton.name}`)
-        })
-    })
-}
-catalogomouse(chanGuito);
-
