@@ -84,3 +84,16 @@ teclado.forEach((producto)=>{
     cardCopiada.children[1].innerText = producto.precio
     cardCopiada.children[2].innerText = producto.detalle
 })
+//Aplicando eventos 
+class mouse{
+    constructor(id,nombre,precio,img){
+        this.id=id;
+        this.nombre=nombre;
+        this.precio=precio;
+        this.img=img;
+    }
+}
+const chanGuito=[];
+const mouse = new mouse ("1", "Asus Rog Gladius", 7500, "src/img/asus-rog-gladius.jpg")
+
+
