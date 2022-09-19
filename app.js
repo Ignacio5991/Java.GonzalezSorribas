@@ -1,4 +1,13 @@
 alert ("Bienvenido");
+//Aplicando eventos 
+let ingreso = document.querySelector("form")
+const usuario = document.querySelector("#formnombre")
+const clave = document.querySelector("#formcontraseña")
+ingreso.addEventListener("submit", validaringreso)
+function validaringreso (e){
+    e.preventDefault()
+    console.log(`${usuario.value}${clave.value}`)
+}
 //Funcion de iniscio de sesion del usuario antes de comenzar a navegar.
 //Aqui esta la funcion de interaccion del usuario para navegar o buscar.
 function navegacion(){
@@ -74,10 +83,5 @@ teclado.forEach((producto)=>{
     cardCopiada.children[1].innerText = producto.precio
     cardCopiada.children[2].innerText = producto.detalle
 })
-//Aplicando eventos 
-let ingreso = document.getElementById("contact-form");
-ingreso.addEventListener("submit",validarIngreso);
-function validarIngreso(e){
-    e.preventdefault();
-    console.log("ingreso con exito");
-}
+
+
