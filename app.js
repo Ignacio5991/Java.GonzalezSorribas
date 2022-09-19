@@ -94,6 +94,26 @@ class mouse{
     }
 }
 const chanGuito=[];
-const mouse = new mouse ("1", "Asus Rog Gladius", 7500, "src/img/asus-rog-gladius.jpg")
-
+const mouse1 = new mouse ("1", "Asus Rog Gladius", 7500, "src/img/asus-rog-gladius.jpg")
+const mouse2 = new mouse ("2","Cougar Surpasion", 6000, "src/img/cougar-surpasion.jpg")
+chanGuito.push(mouse1,mouse2);
+const catalogomouse = (mouse) =>{
+    const contenedormouse = getElementById("contenedor-mouse");
+    mouse.forEach(raton=>{
+        const card = document.createElement("card");
+        card.innerHTML+=`<div class="card" style="width:18rem;">
+                        <img src="${raton.img}" class="card-img-top" alt="...">
+                        <div class="card-body"><h5 class="card-title">${raton.name}</h5>
+                        <p class="card-text">Price:$ ${raton.price}</p>
+                        <button class="btn btn-primary" id="button${raton.id}">Add to Cart</button>
+                        </div>`
+        contenedormouse.appendChild(card);
+        const button = document.getElementById(`button${mouse.id}`);
+        button.addEventListener(`click`,()=>{
+            changuitomouse(`${mouse.id}`);
+            alert(`Agregaste ${raton.name}`)
+        })
+    })
+}
+catalogomouse(chanGuito);
 
