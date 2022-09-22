@@ -20,3 +20,10 @@
     background-color: white;
     font-family: Montserrat=Nunito;
 }
+/*Ordenando Logos de marca*/
+.seCciona{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 165px;
+}
