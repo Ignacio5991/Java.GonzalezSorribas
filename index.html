@@ -38,7 +38,7 @@
             </div>
           </nav>
     </header>
-    <main>
+    <>
         <section>
           <h1>Ingrese a Cybertron</h1>
               <form>
@@ -51,92 +51,31 @@
                 </button>
               </form>
         </section>
-        <section> 
-            <h2>Nuevos Ingresos</h2>
-            <div class="card" style="width: 18rem;">
-                <img src="./imagenes/390gtx.jpg" width="50px" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Placa De Video Rtx 3090 Ftw3 Ultra Gaming 24gb Gddr6x</p>
-                  <p>$999.999</p>
-                  <p>EN STOCK</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="./imagenes/nvidia380ti.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Placa Video Nvidia Geforce Evga Rtx 3080ti 12g Ftw3 Ultra</p>
-                  <p>$275.990</p>
-                  <p>EN STOCK</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="./imagenes/amdreadon578.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Placa de Video Gigabyte AMD Radeon RX 570 Gaming 8GB GDDR5</p>
-                  <p>$ 186.999.00</p>
-                  <p>EN STOCK</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="./imagenes/corsairpro2x8gb.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Memoria Corsair Pro RS 2x8GB 3600mhz</p>
-                  <p>$23125.00</p>
-                  <p>EN STOCK</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="./imagenes/gabinetecorsair.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Gabinete Corsair iCUE 5000T RGB Black</p>
-                  <p>$85100.00</p>
-                  <p>EN STOCK</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="./imagenes/motheraourus.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Mother Gigabyte B550M Aorus Pro AX AM4</p>
-                  <p>$38850.00</p>
-                  <p>EN STOCK</p>
-                </div>
-              </div>
-        </section>
-        <section id="seccionteclados">
-          <h2>Teclados</h2>
-          <template>
-            <div class="product-card">
-              <h3 class="bg-blue">Prodcuto</h3>
-              <p>Precio</p>
-              <p>Detalle</p>
-              <button>Comprar</button>
-            </div>
-          </template>
-        </section>
-        <section id="combos">
-          <h2>Placas Madre y Procesadores</h2>
-          <template>
-            <div class="product-card">
-              <h3 class="bg-blue">Prodcuto</h3>
-              <p>Precio</p>
-              <p>Detalle</p>
-              <button>Comprar</button>
-            </div>
-          </template>
-        </section>
-        <section id="alimentacion">
-          <h2>Fuentes</h2>
-          <template>
+        <section id="seccion-elementos">
+          <template id="temp">
             <div class="product-card">
               <h3 class="bg-blue">Producto</h3>
-              <p>Precio</p>
-              <p>Detalle</p>
-              <button>Comprar</button>
+              <img src="">
+              <p class="billete">Precio</p>
+              <p class="detail">Detalle</p>
+              <button data-id="id">Comprar</button>
             </div>
+          </template> 
+        </section>
+        <hr>
+        <hr>
+        <section id="chango">
+          <template id="temps">
+            <div class="product-cards">
+              <h3 class="bg-blue">Producto</h3>
+              <p class="billete">Precio</p>
+              <span>Cantidad</span>
+            </div>
+            <p id="total">Total a pagar:$<span id="totalPagar">0</span></p>
           </template>
         </section>
         <section class="seCciona">
-            <h3>Nuestros Aliados</h3>
+            <h3 class="subti">Nuestros Aliados</h3>
             <img src="./imagenes/amdlogo.png" width="150px" height="150px">
             <img src="./imagenes/corsair-Logo.png" width="150px" height="150px">
             <img src="./imagenes/gigabytelogo.png" width="150px" height="150px">

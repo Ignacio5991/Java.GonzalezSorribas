@@ -5,8 +5,8 @@
   }
   .cuerpo{
     background-color: blueviolet;
-}
-/* Estilos de Header*/
+  }
+  /* Estilos de Header*/
 .Top{
     background-color: white;
     font-family: Montserrat=Nunito;
@@ -19,16 +19,4 @@
 .bot{
     background-color: white;
     font-family: Montserrat=Nunito;
-}
-/*Estilo del body*/
-.card{
-    display: flex;
-    flex-direction: row;
-}
-/*Ordenando Logos de marca*/
-.seCciona{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 165px;
 }
