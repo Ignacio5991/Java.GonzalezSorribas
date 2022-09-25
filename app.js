@@ -86,9 +86,14 @@ console.log(carrito)
 changolleno();
 }
 //Eliminar productos del carrito
+const eliminar = document.getElementById(`eliminar${existemerc.id}`)
+        eliminar.addEventListener('click', (id) => {
+            eliminarDelCarrito(id)
+            eliminarDelCarrito(existemerc.id)
+        })
 
 //Crando el codigo para el precio final del carrito
-
+totalPagar.innerText = almacen.reduce((acc,producto) => acc + producto.precio, 0);
 
 //Base de Datos
 const baseJson = JSON.stringify(mercaderia);
