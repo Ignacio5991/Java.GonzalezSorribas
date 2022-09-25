@@ -88,5 +88,10 @@ changolleno();
 //Eliminar productos del carrito
 
 //Crando el codigo para el precio final del carrito
-const precioFinal = document.getElementById("totalPagar");
-precioFinal.innerText=carrito.reduce((acc,merca)=>acc+merca.precio,0)
+// const precioFinal = document.getElementById("totalPagar");
+// precioFinal.innerText=carrito.reduce((acc,existemerc)=>acc+existemerc.precio,0)
+
+//Base de Datos
+const baseJson = JSON.stringify(mercaderia);
+console.log(baseJson);
+localStorage.setItem("Item",baseJson);
