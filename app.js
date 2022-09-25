@@ -13,7 +13,7 @@ class Producto {
       this.id = id,
       this.nombre = nombre,
       this.precio = precio,
-      this.imagen = img,
+      this.img = img,
       this.disponible = true;
       this.cantidad = cantidad;
   }
@@ -44,7 +44,7 @@ const template = document.getElementById("temp");
 mercaderia.forEach((merca) => {
   const copia = template.content.cloneNode(true);
   copia.querySelector("h3").textContent = merca.nombre;
-  copia.querySelector("img").setAttribute = ("src", merca.imagen);
+  copia.querySelector("img").setAttribute = ("src", merca.img);
   copia.querySelector(".billete").textContent = merca.precio;
   copia.querySelector("button").dataset.id = merca.id;
   perifericos.appendChild(copia);
@@ -88,14 +88,10 @@ changolleno();
 //Eliminar productos del carrito
 
 //Crando el codigo para el precio final del carrito
-// const precioFinal = document.getElementById("totalPagar");
-// precioFinal.innerText=carrito.reduce((acc,existemerc)=>acc+existemerc.precio,0)
+
 
 //Base de Datos
 const baseJson = JSON.stringify(mercaderia);
-console.log(baseJson);
 localStorage.setItem("Item",baseJson);
-
 const inventario = localStorage.getItem("Item")
-
 const inventarioArray = JSON.parse(localStorage.getItem(mercaderia))
