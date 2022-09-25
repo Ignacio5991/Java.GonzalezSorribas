@@ -95,3 +95,7 @@ changolleno();
 const baseJson = JSON.stringify(mercaderia);
 console.log(baseJson);
 localStorage.setItem("Item",baseJson);
+
+const inventario = localStorage.getItem("Item")
+
+const inventarioArray = JSON.parse(localStorage.getItem(mercaderia))
