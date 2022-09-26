@@ -41,16 +41,16 @@ document.addEventListener("click", (evento) => {
 //Creando listado
 const perifericos = document.getElementById("seccion-elementos");
 const template = document.getElementById("temp");
-mercaderia.forEach((merca) => {
+mercaderia.forEach((componentesElectronicos) => {
   const copia = template.content.cloneNode(true);
-  copia.querySelector("h3").textContent = merca.nombre;
-  copia.querySelector("img").setAttribute = ("src", merca.img);
-  copia.querySelector(".billete").textContent = merca.precio;
-  copia.querySelector("button").dataset.id = merca.id;
+  copia.querySelector("h3").textContent = componentesElectronicos.nombre;
+  copia.querySelector("img").setAttribute = ("src", componentesElectronicos.img);
+  copia.querySelector(".billete").textContent = componentesElectronicos.precio;
+  copia.querySelector("button").dataset.id = componentesElectronicos.id;
   perifericos.appendChild(copia);
 });
 //Ver carrito lleno
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("Carrito")) || [];
 const almacen = document.getElementById("chango");
 const templater = document.getElementById("temps");
 function changolleno() {
@@ -66,37 +66,35 @@ function changolleno() {
 function agregarcarrito(agarrar) {
   const compra = agarrar.target.dataset.id;
   const existeid = carrito.findIndex((compre) => compre.id === compra);
-  const existemerc = mercaderia.find((pague) => pague.id === compra);
+  const existecomponentesElectronicos = mercaderia.find((pague) => pague.id === compra);
   console.log("hola",existeid)
-  console.log("chau",existemerc)
+  console.log("chau",existecomponentesElectronicos)
   if (existeid === -1) {
     carrito.push(
       new Producto(
-        existemerc.id,
-        existemerc.nombre,
-        existemerc.precio,
-        existemerc.img,
-        (existemerc.cantidad = 1)
+        existecomponentesElectronicos.id,
+        existecomponentesElectronicos.nombre,
+        existecomponentesElectronicos.precio,
+        existecomponentesElectronicos.img,
+        (existecomponentesElectronicos.cantidad = 1)
       )
     );
+    actualizarLocalStorage();
   } else{
     carrito[existeid].cantidad++;
+    actualizarLocalStorage();
 }
 console.log(carrito)
 changolleno();
 }
 //Eliminar productos del carrito
-const eliminar = document.getElementById(`eliminar${existemerc.id}`)
-        eliminar.addEventListener('click', (id) => {
-            eliminarDelCarrito(id)
-            eliminarDelCarrito(existemerc.id)
-        })
+
+
 
 //Crando el codigo para el precio final del carrito
-totalPagar.innerText = almacen.reduce((acc,producto) => acc + producto.precio, 0);
 
-//Base de Datos
-const baseJson = JSON.stringify(mercaderia);
-localStorage.setItem("Item",baseJson);
-const inventario = localStorage.getItem("Item")
-const inventarioArray = JSON.parse(localStorage.getItem(mercaderia))
+
+//Json&Local
+function actualizarLocalStorage(){
+  localStorage.setItem("Carrito",JSON.stringify(carrito))
+}

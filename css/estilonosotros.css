@@ -9,7 +9,7 @@
   /* Estilos de Header*/
 .Top{
     background-color: white;
-    font-family: Montserrat=Nunito;
+    font-family:'Open Sans', sans-serif;
 }
 .nav-link{
     color: black;
@@ -18,5 +18,23 @@
 }
 .bot{
     background-color: white;
-    font-family: Montserrat=Nunito;
+    font-family: 'Open Sans', sans-serif;
+}
+/*Estilos del Body*/
+.textoDePresentacion{
+  font-family: 'Open Sans', sans-serif;;
+  font-size: xx-large;
+  color: white;
+}
+.sobreNosotros{
+  height: 20rem;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rem;
+  padding-top: 5rem;
+}
+.mapa{
+  padding-top: 5rem;
+  margin-left: 20rem;
 }
