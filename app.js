@@ -54,13 +54,14 @@ let carrito = JSON.parse(localStorage.getItem("Carrito")) || [];
 const almacen = document.getElementById("chango");
 const templater = document.getElementById("temps");
 function changolleno() {
-    almacen.textContent = "";
+   
   carrito.forEach((compus) => {
+    almacen.innerHTML = "";
     const replica = templater.content.cloneNode(true);
     replica.querySelector("h3").textContent = compus.nombre;
     replica.querySelector(".billete").textContent = compus.precio;
     replica.querySelector("span").textContent = compus.cantidad;
-    perifericos.appendChild(replica);
+    almacen.appendChild(replica);
   });
 }
 function agregarcarrito(agarrar) {
