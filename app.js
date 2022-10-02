@@ -10,12 +10,12 @@ function validaringreso(e) {
 //Comienzo del catalogo
 class Producto {
   constructor(id, nombre, precio, img, cantidad) {
-      this.id = id,
-      this.nombre = nombre,
-      this.precio = precio,
-      this.img = img,
-      this.disponible = true;
-      this.cantidad = cantidad;
+    (this.id = id),
+      (this.nombre = nombre),
+      (this.precio = precio),
+      (this.img = img),
+      (this.disponible = true);
+    this.cantidad = cantidad;
   }
 }
 const mercaderia = [
@@ -35,7 +35,7 @@ const mercaderia = [
 ];
 document.addEventListener("click", (evento) => {
   if (evento.target.matches("button")) {
-    agregarcarrito(evento);
+    agregarCarrito(evento);
   }
 });
 //Creando listado
@@ -44,7 +44,8 @@ const template = document.getElementById("temp");
 mercaderia.forEach((componentesElectronicos) => {
   const copia = template.content.cloneNode(true);
   copia.querySelector("h3").textContent = componentesElectronicos.nombre;
-  copia.querySelector("img").setAttribute = ("src", componentesElectronicos.img);
+  copia.querySelector("img").setAttribute =
+    ("src", componentesElectronicos.img);
   copia.querySelector(".billete").textContent = componentesElectronicos.precio;
   copia.querySelector("button").dataset.id = componentesElectronicos.id;
   perifericos.appendChild(copia);
@@ -54,7 +55,6 @@ let carrito = JSON.parse(localStorage.getItem("Carrito")) || [];
 const almacen = document.getElementById("chango");
 const templater = document.getElementById("temps");
 function changolleno() {
-   
   carrito.forEach((compus) => {
     almacen.innerHTML = "";
     const replica = templater.content.cloneNode(true);
@@ -64,38 +64,55 @@ function changolleno() {
     almacen.appendChild(replica);
   });
 }
-function agregarcarrito(agarrar) {
-  const compra = agarrar.target.dataset.id;
+function agregarCarrito(producto) {
+  const compra = producto.target.dataset.id;
   const existeid = carrito.findIndex((compre) => compre.id === compra);
-  const existecomponentesElectronicos = mercaderia.find((pague) => pague.id === compra);
-  console.log("hola",existeid)
-  console.log("chau",existecomponentesElectronicos)
+  const existecomponentesElectronicos = mercaderia.find(
+    (pague) => pague.id === compra
+  );
+  console.log("hola", existeid);
+  console.log("chau", existecomponentesElectronicos);
   if (existeid === -1) {
     carrito.push(
       new Producto(
         existecomponentesElectronicos.id,
-        existecomponentesElectronicos.nombre,
-        existecomponentesElectronicos.precio,
-        existecomponentesElectronicos.img,
         (existecomponentesElectronicos.cantidad = 1)
       )
     );
     actualizarLocalStorage();
-  } else{
+  } else {
     carrito[existeid].cantidad++;
     actualizarLocalStorage();
+  }
+  console.log(carrito);
+  changolleno();
 }
-console.log(carrito)
-changolleno();
-}
+//Crando Alert que confirme que el producto se añadio.
+const botondecompra = document.querySelector("#id-compra");
+botondecompra.addEventListener("click", () => {
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Tu Producto se añadido con exito",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+});
 //Eliminar productos del carrito
-
-
+function eliminarPeriferico(quitar) {
+  const noLoQuiero = this.id.indexOF(quitar);
+  this.cantidad[noLoQuiero] -= 1;
+  actualizarLocalStorage();
+}
+document.addEventListener("click", (quitarproducto) => {
+  if (quitarproducto.target.matches("eliminarProducto")) {
+    eliminarPeriferico(quitarproducto);
+  }
+});
 
 //Crando el codigo para el precio final del carrito
 
-
 //Json&Local
-function actualizarLocalStorage(){
-  localStorage.setItem("Carrito",JSON.stringify(carrito))
+function actualizarLocalStorage() {
+  localStorage.setItem("Carrito", JSON.stringify(carrito));
 }

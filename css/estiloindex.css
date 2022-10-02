@@ -15,19 +15,27 @@
     color: black;
     transition: gray 0.5s;
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 .nav-link:hover {
     color:gray;
   }
-.bot{
-    background-color: white;
-    font-family: Montserrat=Nunito;
-}
+
 /*Estilo del body*/
 .card{
     display: flex;
     flex-direction: row;
+}
+button{
+    background-color: black;
+    font-family: 'Open Sans',sans-serif;
+    color: white;
+}
+
+/*Estilo Footer*/
+.bot{
+    background-color: white;
+    font-family:'Nunito',sans-serif;
 }
 /*Ordenando Logos de marca*/
 .seCciona{

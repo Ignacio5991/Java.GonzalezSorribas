@@ -9,16 +9,12 @@
   /* Estilos de Header*/
 .Top{
     background-color: white;
-    font-family:'Open Sans', sans-serif;
+    font-family:'Nunito', sans-serif;
 }
 .nav-link{
     color: black;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-}
-.bot{
-    background-color: white;
-    font-family: 'Open Sans', sans-serif;
 }
 /*Estilos del Body*/
 .textoDePresentacion{
@@ -37,4 +33,9 @@
 .mapa{
   padding-top: 5rem;
   margin-left: 20rem;
+}
+/*Estilos Footes*/
+.bot{
+  background-color: white;
+  font-family: 'Nunito', sans-serif;
 }
