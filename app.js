@@ -76,29 +76,36 @@ function agregarCarrito(producto) {
     carrito.push(
       new Producto(
         existecomponentesElectronicos.id,
-        (existecomponentesElectronicos.cantidad = 1)
+        (existecomponentesElectronicos.cantidad = 1),
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Su Producto se añadio con exito',
+          showConfirmButton: true,
+          timer: 2000
+        })
       )
     );
     actualizarLocalStorage();
   } else {
     carrito[existeid].cantidad++;
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Su Producto se añadio con exito',
+      showConfirmButton: true,
+      timer: 2000
+    })
     actualizarLocalStorage();
   }
   console.log(carrito);
   changoLleno();
 }
 //Crando Alert que confirme que el producto se añadio.
-const botonDecompra = document.querySelector("#id");
-botonDecompra.addEventListener("click", () => {
-  Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    title: 'Su Producto se añadio con exito',
-    showConfirmButton: true,
-    timer: 2000
-  })
-});
-agregarCarrito();
+//const botonDecompra = document.querySelector("#id");
+//botonDecompra.addEventListener("click", () => {
+  
+//});//
 //Eliminar productos del carrito
 function eliminarPeriferico(quitar) {
   const noLoQuiero = this.id.indexOF(quitar);
