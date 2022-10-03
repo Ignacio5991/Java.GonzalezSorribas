@@ -54,7 +54,7 @@ mercaderia.forEach((componentesElectronicos) => {
 let carrito = JSON.parse(localStorage.getItem("Carrito")) || [];
 const almacen = document.getElementById("chango");
 const templater = document.getElementById("temps");
-function changolleno() {
+function changoLleno() {
   carrito.forEach((compus) => {
     almacen.innerHTML = "";
     const replica = templater.content.cloneNode(true);
@@ -85,19 +85,20 @@ function agregarCarrito(producto) {
     actualizarLocalStorage();
   }
   console.log(carrito);
-  changolleno();
+  changoLleno();
 }
 //Crando Alert que confirme que el producto se añadio.
-const botondecompra = document.querySelector("#id-compra");
-botondecompra.addEventListener("click", () => {
+const botonDecompra = document.querySelector("#id");
+botonDecompra.addEventListener("click", () => {
   Swal.fire({
-    position: "top-end",
-    icon: "success",
-    title: "Tu Producto se añadido con exito",
-    showConfirmButton: false,
-    timer: 1500,
-  });
+    position: 'top-end',
+    icon: 'success',
+    title: 'Su Producto se añadio con exito',
+    showConfirmButton: true,
+    timer: 2000
+  })
 });
+agregarCarrito();
 //Eliminar productos del carrito
 function eliminarPeriferico(quitar) {
   const noLoQuiero = this.id.indexOF(quitar);
