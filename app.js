@@ -33,11 +33,7 @@ const mercaderia = [
   new Producto("12", "Red Dragon 850w", "$18000"),
   new Producto("13", "Gygabite 550W", "$7500"),
 ];
-document.addEventListener("click", (evento) => {
-  if (evento.target.matches("button")) {
-    agregarCarrito(evento);
-  }
-});
+
 //Creando listado
 const perifericos = document.getElementById("seccion-elementos");
 const template = document.getElementById("temp");
@@ -48,8 +44,24 @@ mercaderia.forEach((componentesElectronicos) => {
     ("src", componentesElectronicos.img);
   copia.querySelector(".billete").textContent = componentesElectronicos.precio;
   copia.querySelector("button").dataset.id = componentesElectronicos.id;
+  copia.querySelector("button").addEventListener("click",()=>{
+    console.log(componentesElectronicos)
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Su Producto se añadio con exito",
+      showConfirmButton: true,
+      timer: 2000,
+    })
+    
+  })
   perifericos.appendChild(copia);
+
+
 });
+
+
+
 //Ver carrito lleno
 let carrito = JSON.parse(localStorage.getItem("Carrito")) || [];
 const almacen = document.getElementById("chango");
@@ -62,65 +74,13 @@ function changoLleno() {
     replica.querySelector(".billete").textContent = compus.precio;
     replica.querySelector("span").textContent = compus.cantidad;
     almacen.appendChild(replica);
+    actualizarLocalStorage();
   });
 }
-function agregarCarrito(producto) {
-  const compra = producto.target.dataset.id;
-  const existeid = carrito.findIndex((compre) => compre.id === compra);
-  const existecomponentesElectronicos = mercaderia.find(
-    (pague) => pague.id === compra
-  );
-  console.log("hola", existeid);
-  console.log("chau", existecomponentesElectronicos);
-  if (existeid === -1) {
-    carrito.push(
-      new Producto(
-        existecomponentesElectronicos.id,
-        (existecomponentesElectronicos.cantidad = 1),
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Su Producto se añadio con exito',
-          showConfirmButton: true,
-          timer: 2000
-        })
-      )
-    );
-    actualizarLocalStorage();
-  } else {
-    carrito[existeid].cantidad++;
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Su Producto se añadio con exito',
-      showConfirmButton: true,
-      timer: 2000
-    })
-    actualizarLocalStorage();
-  }
-  console.log(carrito);
-  changoLleno();
-}
-//Crando Alert que confirme que el producto se añadio.
-//const botonDecompra = document.querySelector("#id");
-//botonDecompra.addEventListener("click", () => {
-  
-//});//
-//Eliminar productos del carrito
-function eliminarPeriferico(quitar) {
-  const noLoQuiero = this.id.indexOF(quitar);
-  this.cantidad[noLoQuiero] -= 1;
-  actualizarLocalStorage();
-}
-document.addEventListener("click", (quitarproducto) => {
-  if (quitarproducto.target.matches("eliminarProducto")) {
-    eliminarPeriferico(quitarproducto);
-  }
-});
 
-//Crando el codigo para el precio final del carrito
 
 //Json&Local
 function actualizarLocalStorage() {
   localStorage.setItem("Carrito", JSON.stringify(carrito));
 }
+

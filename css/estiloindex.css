@@ -22,10 +22,12 @@
   }
 
 /*Estilo del body*/
-.card{
-    display: flex;
-    flex-direction: row;
+#seccion-elementos{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 30% 30% 30%;
 }
+
 button{
     background-color: black;
     font-family: 'Open Sans',sans-serif;
@@ -37,6 +39,25 @@ button{
     background-color: white;
     font-family:'Nunito',sans-serif;
 }
+.subti{
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: 'Nunito',sans-serif;;
+}
+.registrado{
+    text-align: center;
+    font-size: xx-large;
+}
+.seguinos{
+    margin-top: 6px;
+    display: inline-block;
+    font-size: xx-large;  
+}
+.telefono-wsp {
+    margin-top: 6px;
+    display: inline-block;
+    font-size: xx-large;
+  }
 /*Ordenando Logos de marca*/
 .seCciona{
     display: flex;
@@ -45,6 +66,5 @@ button{
     margin-right: 165px;
 }
 .marcasConlasquetrabajamos:hover{
-    transform: scale(1.05); 
-    
+    transform: scale(1.05);   
 }
