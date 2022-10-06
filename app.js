@@ -8,31 +8,23 @@ function validaringreso(e) {
   console.log(`${usuario.value}${clave.value}`);
 }
 //Comienzo del catalogo
-class Producto {
-  constructor(id, nombre, precio, img, cantidad) {
-    (this.id = id),
-      (this.nombre = nombre),
-      (this.precio = precio),
-      (this.img = img),
-      (this.disponible = true);
-    this.cantidad = cantidad;
-  }
-}
-const mercaderia = [
-  new Producto("1", "Tarjeta Grafica RTX 3080 Ti", "$270.000"),
-  new Producto("2", "Tarjeta Grafica AMD Readon 580", "$186.000"),
-  new Producto("3", "Memoria Corsair 2x8gb 3600Mhz", "$23.125"),
-  new Producto("4", "Gabinete Corsair RGB", "$50.000"),
-  new Producto("5", "Mother Gigabyte B550M", "$38.000"),
-  new Producto("6", "Apex 100", "$4500", "imagenes/apex100.jpg"),
-  new Producto("7", "Apex 750", "$7800", "/imagenes/apex750.jpg"),
-  new Producto("8", "Corsair 68", "$15000", "imagenes/corsair68.jpg"),
-  new Producto("9", "Red Dragon Kumara", "$10000", "imagenes/redragonkumara"),
-  new Producto("10", "Cool Master 750W", "$16000"),
-  new Producto("11", "Cool Master 800W", "$20000"),
-  new Producto("12", "Red Dragon 850w", "$18000"),
-  new Producto("13", "Gygabite 550W", "$7500"),
-];
+const inventario = document.querySelector("#seccion-elementos");
+fetch("/basededatos.json")
+.then((resp)=>resp.json())
+.then((data)=>{
+  data.forEach((componentes)=>{
+    const li = document.createElement ("Productos")
+    li.innerHTML=`
+              <h5>${componentes.id}</h5>
+              <h4>${componentes.nombre}</h4>
+              <img src"${componentes.img}">
+              <p>${componentes.precio}</p>
+              <button>${componentes.button}</button>
+    `
+    inventario.append(li)
+  })
+});
+
 
 //Creando listado
 const perifericos = document.getElementById("seccion-elementos");
@@ -77,6 +69,7 @@ function changoLleno() {
     actualizarLocalStorage();
   });
 }
+
 
 
 //Json&Local
