@@ -3,7 +3,7 @@
     "id": "1",
     "nombre": "Tarjeta Grafica RTX 3080 Ti",
     "img":"/imagenes/nvidia380ti.jpg",
-    "precio": "$270.000",
+    "precio": 270000,
     "disponible": true,
     "button":"Comprar"
   },
@@ -11,7 +11,7 @@
     "id": "2",
     "nombre": "Tarjeta Grafica AMD Readon 580",
     "img":"/imagenes/amdreadon578.jpg",
-    "precio": "$186.000",
+    "precio": 186000,
     "disponible": true,
     "button":"Comprar"
   },
@@ -19,7 +19,7 @@
     "id": "3",
     "nombre": "Memoria Corsair 2x8gb 3600Mhz",
     "img":"/imagenes/corsairpro2x8gb.jpg",
-    "precio": "$23.125",
+    "precio": 23125,
     "disponible": true,
     "button":"Comprar"
   },
@@ -27,7 +27,7 @@
     "id": "4",
     "nombre": "Gabinete Corsair RGB",
     "img":"/imagenes/gabinetecorsair.jpg",
-    "precio": "$50.000",
+    "precio": 50000,
     "disponible": true,
     "button":"Comprar"
   },
@@ -35,14 +35,14 @@
     "id": "5",
     "nombre": "Mother Gigabyte B550M",
     "img":"",
-    "precio": "$38.000",
+    "precio": 38000,
     "disponible": true,
     "button":"Comprar"
   },
   {
     "id": "6",
     "nombre": "Apex 100",
-    "precio": "$4500",
+    "precio": 4500,
     "img": "imagenes/apex100.jpg",
     "disponible": true,
     "button":"Comprar"
@@ -50,7 +50,7 @@
   {
     "id": "7",
     "nombre": "Apex 750",
-    "precio": "$7800",
+    "precio": 7800,
     "img": "/imagenes/apex750.jpg",
     "disponible": true,
     "button":"Comprar"
@@ -58,7 +58,7 @@
   {
     "id": "8",
     "nombre": "Corsair 68",
-    "precio": "$15000",
+    "precio": 15000,
     "img": "imagenes/corsair68.jpg",
     "disponible": true,
     "button":"Comprar"
@@ -66,8 +66,8 @@
   {
     "id": "9",
     "nombre": "Red Dragon Kumara",
-    "precio": "$10000",
-    "img": "imagenes/redragonkumara",
+    "precio": 10000,
+    "img": "imagenes/redragonkumara.jpg",
     "disponible": true,
     "button":"Comprar"
   },
@@ -75,7 +75,7 @@
     "id": "10",
     "nombre": "Cool Master 750W",
     "img":"/imagenes/coolmaster750w.jpg",
-    "precio": "$16000",
+    "precio": 16000,
     "disponible": true,
     "button":"Comprar"
   },
@@ -83,7 +83,7 @@
     "id": "11",
     "nombre": "Cool Master 800W",
     "img":"/imagenes/coolmaster800w.jpg",
-    "precio": "$20000",
+    "precio": 20000,
     "disponible": true,
     "button":"Comprar"
   },
@@ -91,7 +91,7 @@
     "id": "12",
     "nombre": "Red Dragon 850w",
     "img":"/imagenes/fuenteredragon850w.jpg",
-    "precio": "$18000",
+    "precio": 18000,
     "disponible": true,
     "button":"Comprar"
   },
@@ -99,7 +99,7 @@
     "id": "13",
     "nombre": "Gygabite 550W",
     "img":"/imagenes/gigabyte550w.jpg",
-    "precio": "$7500",
+    "precio": 7500,
     "disponible": true,
     "button":"Comprar"
   }
