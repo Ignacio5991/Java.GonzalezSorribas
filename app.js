@@ -4,19 +4,6 @@
  *  Octubre 2022
  */
 
-//Aplicando eventos
-let ingrese = document.querySelector("form");
-const usuario = document.querySelector("#formnombre");
-const clave = document.querySelector("#formcontraseña");
-ingrese.addEventListener("submit", validaringreso);
-function validaringreso(e) {
-  e.preventDefault();
-  console.log(`${usuario.value}${clave.value}`);
-}
-//Comienzo del catalogo
-/*const inventario = document.querySelector("#seccion-elementos");*/
-
-
 /* Definicion de clases */
 
 /**
@@ -49,6 +36,7 @@ class Producto {
 /* ------- definicion de variables  ------- */
 function agregar_mercaderia(producto) {
   let content = document.createElement("div");
+  content.className="estiloGaleria";
   content.innerHTML = `
     <img src="${producto.img}">
     <h3>${producto.nombre}</h3>
@@ -85,6 +73,7 @@ function agregar_mercaderia(producto) {
       timer: 2000,
     })
     console.log("carrito");
+    cantidadDeProducto();
   });
 }
 
@@ -105,6 +94,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito_static")) || [];
 
 const verCarrito = document.getElementById("ver-carrito");
 const changoCompras = document.getElementById("carrito-de-compras");
+const cantidadDeProductos = document.getElementById("cantidadDeProductos");
 
 /*Funcion de Renderizado del Carrito */
 const pintarCarrito = () => {
@@ -176,10 +166,16 @@ const eliminarProducto = () => {
     showConfirmButton: true,
     timer: 2000,
   })
+  cantidadDeProducto();
   pintarCarrito();
 };
-//Json&Local
+/*Funcion de sumar productos en el icono del carrito para que me muestre la cantidad de productos seleccionados */
+const cantidadDeProducto = () =>{
+  cantidadDeProductos.style.display="block";
+  cantidadDeProductos.innerText = carrito.length;
+}
+
+/* funcion para actualizar local storage*/
 function actualizarLocalStorage() {
   localStorage.setItem("carrito_static", JSON.stringify(carrito));
 }
-

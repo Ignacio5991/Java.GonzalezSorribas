@@ -9,23 +9,34 @@
 /* Estilos de Header*/
 .Top{
     background-color: white;
-    font-family: Montserrat=Nunito;
 }
 .nav-link{
     color: black;
     transition: gray 0.5s;
     text-decoration: none;
     font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-size: 50px;
 }
 .nav-link:hover {
     color:gray;
   }
 
+.ver-carrito{
+    margin-left: 1100px;
+    cursor: pointer;
+}
 /*Estilo del body*/
-#seccion-elementos{
+#shopping{
+    padding-top: 15px;
+    padding-left: 240px;
     display: grid;
-    justify-content: space-between;
     grid-template-columns: 30% 30% 30%;
+}
+.estiloGaleria{
+    display: grid;
+    grid-template-columns: 40%;
+    justify-items: stretch;
 }
 
 button{
@@ -42,7 +53,7 @@ button{
     max-height: 88vh;
     color: white;
     background-color: #121212;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     position: fixed;

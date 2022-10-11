@@ -34,7 +34,7 @@
   {
     "id": "5",
     "nombre": "Mother Gigabyte B550M",
-    "img":"",
+    "img":"imagenes/motheraourus.jpg",
     "precio": 38000,
     "disponible": true,
     "button":"Comprar"
