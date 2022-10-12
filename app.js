@@ -174,6 +174,15 @@ const cantidadDeProducto = () =>{
   cantidadDeProductos.style.display="block";
   cantidadDeProductos.innerText = carrito.length;
 }
+/*Formulario para suscribirse al newsletter */
+const formulario = document.querySelector("form");
+const nombre = document.querySelector("name");
+const mail = document.querySelector("mail");
+formulario.addEventListener("submit",validarformulario);
+function validarformulario(e){
+  e.preventDefault();
+  console.log(`${nombre.value}${mail.value}`)
+}
 
 /* funcion para actualizar local storage*/
 function actualizarLocalStorage() {

@@ -102,5 +102,21 @@
     "precio": 7500,
     "disponible": true,
     "button":"Comprar"
+  },
+  {
+    "id": "14",
+    "nombre": "Mouse Cougar Surpasion RGB",
+    "img":"/imagenes/cougar-surpasion.jpg",
+    "precio": 4000,
+    "disponible": true,
+    "button":"Comprar"
+  },
+  {
+    "id": "15",
+    "nombre": "Gabinete Cougar Conquer",
+    "img":"/imagenes/gabinete-cougarconquer2.jpg",
+    "precio": 35000,
+    "disponible": true,
+    "button":"Comprar"
   }
 ]

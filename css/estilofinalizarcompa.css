@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.cuerpo {
+  background-color: blueviolet;
+}
+/* Estilos de Header*/
+.Top {
+  background-color: white;
+  font-family: "Nunito", sans-serif;
+}
+.nav-link {
+  color: black;
+  transition: gray 0.5s;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  font-size: 60px;
+}
+.nav-link:hover {
+  color: gray;
+}
+
+.ver-carrito {
+  margin-left: 1100px;
+  margin-bottom: 60px;
+  cursor: pointer;
+}
+
+/*Estilos Footes*/
+.bot {
+  background-color: white;
+  font-family: "Nunito", sans-serif;
+}
+.subti {
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+}
+.registrado {
+  text-align: center;
+  font-size: xx-large;
+}
+.seguinos {
+  margin-top: 6px;
+  display: inline-block;
+  font-size: xx-large;
+}
+.telefono-wsp {
+  margin-top: 6px;
+  display: inline-block;
+  font-size: xx-large;
+}
