@@ -28,6 +28,25 @@
   margin-bottom: 60px;
   cursor: pointer;
 }
+/*Estilos Body*/
+.textonoticias{
+  font-family: 'Open Sans', sans-serif;;
+  font-size: xx-large;
+  color: white;
+}
+.form-label{
+  margin-left: 500px;
+  font-family: 'Open Sans', sans-serif;;
+  font-size: x-large;
+}
+.btn{
+    background-color: black;
+    font-family: 'Open Sans',sans-serif;
+    color: white;
+    margin-left: 650px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 /*Estilos Footes*/
 .bot {

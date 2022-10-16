@@ -175,14 +175,31 @@ const cantidadDeProducto = () =>{
   cantidadDeProductos.innerText = carrito.length;
 }
 /*Formulario para suscribirse al newsletter */
-const formulario = document.querySelector("form");
-const nombre = document.querySelector("name");
-const mail = document.querySelector("mail");
-formulario.addEventListener("submit",validarformulario);
-function validarformulario(e){
-  e.preventDefault();
-  console.log(`${nombre.value}${mail.value}`)
+class nuevoSuscriptores{
+  constructor(nombre, mail){
+    this.name=nombre,
+    this.mail=mail
+  }
 }
+const suscriPtores=[];
+let formulario = document.getElementById("form");
+formulario.addEventListener("submit",(e)=>{
+  e.preventDefault()
+  let nombre = document.getElementById("name").value;
+  let mail = document.getElementById("mail").value;
+  console.log(nuevoSuscriptores);
+  const nuevoSuscriptor= new nuevoSuscriptores(nombre,mail);
+  suscriPtores.push(nuevoSuscriptor);
+  localStorage.setItem("suscriptor",JSON.stringify(suscriPtores));
+  formulario.reset();
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Gracias por suscribirte, te estaremos contactando a la brevedad",
+    showConfirmButton: true,
+    timer: 2000,
+  })
+});
 
 /* funcion para actualizar local storage*/
 function actualizarLocalStorage() {
